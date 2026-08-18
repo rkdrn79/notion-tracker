@@ -15,6 +15,20 @@ Both Papers and Ideas require:
 
 Create separate Paper Areas and Idea Areas databases with one page per broad area. Each area database needs only a human title, short description, and numeric display order by default. Inside each Paper Area page, create a linked Table of Papers filtered where `Big Area` equals the page's area. Do the same with Ideas inside each Idea Area page. The Research Space Galleries show these area pages; they do not show individual Paper or Idea records directly.
 
+## Adding a broad area
+
+Treat the Paper and Idea taxonomies as one synchronized vocabulary. Before adding an option, fetch both asset schemas and query both area databases. Reuse an existing canonical label when the candidate differs only by case, spacing, abbreviation, or singular/plural form.
+
+For a genuinely new field-level family:
+
+1. Alter both `Big Area` selects to include the new value while retaining every existing option and color.
+2. Add matching Paper Area and Idea Area records with the next numeric order.
+3. Create a Table inside each new card using an exact `Big Area = new value` filter against the corresponding asset database.
+4. Match the visible columns and sort order used by existing area cards.
+5. Update the triggering Paper or Idea records, then verify both schemas, both cards, and both filtered views.
+
+Do not use this workflow for narrow topics; add those only to `Related Areas`.
+
 ## Required structure
 
 1. One paper HQ following real paper sections.

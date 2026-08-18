@@ -71,6 +71,21 @@ Inside every Paper Area card, place a linked Table of the Papers database filter
 
 Keep a single-select `Big Area` on every Paper and Idea record so the filtered tables remain dynamic. Also keep a `Related Areas` multi-select for finer tags such as JEPA, replay, online adaptation, evaluation, or other workspace-specific topics. Each record gets exactly one best-fit Big Area and may get multiple Related Areas. Keep all source databases on the private data page; the root contains only their linked Gallery views.
 
+### Extend the broad-area taxonomy
+
+Add a new broad area when the user explicitly names one, or when a new Paper or Idea belongs to a recognized research family at the same granularity as the existing areas and assigning an existing area would be misleading. Do not create a broad area for a single method, benchmark, model family, or experiment theme; keep those in `Related Areas`. Use `Other` only while the evidence is too weak to name a stable family.
+
+Before adding an area, normalize capitalization and singular/plural variants, then fetch both area databases and both `Big Area` schemas to prevent aliases or duplicates. When the area is genuinely new:
+
+1. Add the same option to the Paper and Idea `Big Area` selects, preserving every existing option.
+2. Create one matching card in Paper Areas and one in Idea Areas, even if one side is initially empty.
+3. Use the next display order and write a one-sentence description in ordinary language.
+4. Put a filtered Papers Table inside the Paper Area card and a filtered Ideas Table inside the Idea Area card.
+5. Assign the triggering records to the new area.
+6. Fetch both cards and schemas to verify the names and filters match exactly.
+
+Keep the Paper and Idea area taxonomies synchronized. Never leave an option without its two area cards or an area card without its corresponding select option.
+
 The default portfolio table shows only the human project title, target conference, start date, last update, and priority. Do not add paper relations, research summaries, next actions, blockers, stage, repository paths, or stable keys to the visible portfolio schema. Prefer a fresh minimal database over carrying legacy properties and views into the main surface; move the old database to a recoverable archive after migrating its project pages.
 
 Create one portfolio record per independent paper or research line. Inside that record, create project-local Research Projects and Daily Progress databases. Do not mix the support tasks or daily logs of unrelated papers into one shared table.
@@ -172,6 +187,7 @@ Before completion, read the HQ as a researcher and check:
 - Are Papers and Ideas kept as separate area-card Galleries?
 - Does every area card open to a Table filtered to the same Big Area?
 - Do underlying Paper and Idea records keep one Big Area and optional finer Related Areas?
+- Are the Paper and Idea Big Area options and area cards synchronized, including newly discovered broad areas?
 - Does each portfolio record open directly into one paper workspace with its own Research Projects and Daily Progress?
 - Is the project-local Daily Progress calendar the first content block in every project home?
 
