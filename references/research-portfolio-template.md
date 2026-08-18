@@ -14,8 +14,10 @@ Research Space page
 │       │   ├── Daily Progress database
 │       │   └── optional collapsed audit databases
 │       └── Project B — independent paper workspace
-├── Papers Gallery — grouped by Big Area
-└── Ideas Gallery — grouped by Big Area
+├── Papers Gallery — one card per broad area
+│   └── Area card → filtered Papers table
+└── Ideas Gallery — one card per broad area
+    └── Area card → filtered Ideas table
 ```
 
 The database record is the project home. Do not insert a second generic HQ page between the portfolio record and the paper.
@@ -23,14 +25,14 @@ The database record is the project home. Do not insert a second generic HQ page 
 ## Portfolio page reading order
 
 1. `Research Projects` — a linked Gallery of the research portfolio database, with one research line per card.
-2. `Papers` — a separate linked Gallery grouped by `Big Area`.
-3. `Ideas` — a separate linked Gallery grouped by `Big Area`.
+2. `Papers` — a linked Gallery of Paper Area cards.
+3. `Ideas` — a linked Gallery of Idea Area cards.
 
 Do not add anything else to the main page by default. Keep instructions, status dashboards, archived structures, and source databases elsewhere.
 
-Keep Papers and Ideas as separate databases and separate Galleries. Give both a single-select `Big Area` and a multi-select `Related Areas`. Group each Gallery by Big Area, while displaying the finer Related Areas on its cards.
+Keep Papers and Ideas as separate asset databases. Also create separate Paper Areas and Idea Areas databases whose records are the cards shown on the Research Space. Each area card opens to a linked Table filtered from its corresponding asset database.
 
-Use genuinely broad Big Area values by default: `World Models`, `MLLM`, `Generative Modeling`, `Continual Learning`, `Robotics`, `Representation Learning`, and `Other`. Assign exactly one best-fit Big Area to each Paper or Idea. Use Related Areas for narrower concepts such as JEPA, replay, online adaptation, or evaluation. Do not create a Research Areas database, area cards, or area pages merely to implement grouping.
+Use genuinely broad areas by default: `World Models`, `MLLM`, `Generative Modeling`, `Continual Learning`, `Robotics`, `Representation Learning`, and `Other`. Assign exactly one best-fit `Big Area` to each Paper or Idea. Use `Related Areas` for narrower concepts such as JEPA, replay, online adaptation, or evaluation.
 
 ## Human portfolio fields
 
@@ -47,10 +49,10 @@ Use the workspace's established language and property names. Do not carry old re
 ## Required views
 
 - **Research Projects:** Gallery cards show the five human fields above.
-- **Papers:** Gallery grouped by Big Area; cards show title, Big Area, Related Areas, classification, year, authors, reading state, and one-line summary when those fields exist.
-- **Ideas:** Gallery grouped by Big Area; cards show title, Big Area, Related Areas, state, rationale, and date when those fields exist.
+- **Papers:** Gallery cards are broad areas. Each card contains a Papers Table filtered to the same Big Area; show title, Related Areas, classification, year, authors, reading state, summary, and link when those fields exist.
+- **Ideas:** Gallery cards are broad areas. Each card contains an Ideas Table filtered to the same Big Area; show title, Related Areas, state, rationale, and date when those fields exist.
 
-Keep all source databases on a separate private data page so the Research Space contains only linked Galleries and their three minimal headings.
+Keep the portfolio, area, Paper, and Idea source databases on a separate private data page so the Research Space contains only linked Galleries and their three minimal headings.
 
 ## Bootstrap a new project home
 

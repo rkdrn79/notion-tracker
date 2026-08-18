@@ -4,7 +4,7 @@ The paper page is primary. Databases exist to resolve and track missing paper su
 
 ## Research Space shared libraries
 
-The Research Space root contains three separate linked Gallery views: Research Projects, Papers, and Ideas. Keep their source databases on a private data page.
+The Research Space root contains three separate linked Gallery views: Research Projects, Paper Areas, and Idea Areas. Keep their source databases on a private data page.
 
 Both Papers and Ideas require:
 
@@ -13,7 +13,7 @@ Both Papers and Ideas require:
 | 큰 분야 / Big Area | Select | Exactly one broad family: World Models, MLLM, Generative Modeling, Continual Learning, Robotics, Representation Learning, or Other |
 | 관련 분야 / Related Areas | Multi-select | Zero or more finer workspace-specific topics such as JEPA, replay, online adaptation, or evaluation |
 
-Group each linked Paper and Idea Gallery by Big Area. Big Areas are select values, not rows in a separate database and not intermediate pages.
+Create separate Paper Areas and Idea Areas databases with one page per broad area. Each area database needs only a human title, short description, and numeric display order by default. Inside each Paper Area page, create a linked Table of Papers filtered where `Big Area` equals the page's area. Do the same with Ideas inside each Idea Area page. The Research Space Galleries show these area pages; they do not show individual Paper or Idea records directly.
 
 ## Required structure
 
