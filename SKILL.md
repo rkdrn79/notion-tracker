@@ -1,6 +1,6 @@
 ---
 name: notion-track-research
-description: Build and maintain a multi-project Notion research portfolio whose project pages are paper workspaces that follow real paper sections and contain enough reasoning, evidence, and section-level prose for a human to write each manuscript from Notion alone. Use when an agent needs to initialize or revise the research portfolio or a paper, create an independent project home for a new research line, connect claims that require experiments, analysis, proof, or literature checks to research project pages, track those projects, capture daily paper progress, or audit missing support. Keep technical provenance available but out of the main reading path; never turn a paper page into a database dashboard or a mirror of server directories.
+description: Build and maintain a paper-first multi-project Notion Research Space with a project Gallery, broad-area Paper and Idea Galleries whose cards open filtered tables, dynamically extensible research-area taxonomies, project-local Daily Progress calendars, and section-linked supporting work. Use when initializing or restructuring a Notion research portfolio; adding or organizing projects, papers, ideas, or broad research areas; writing or revising a paper workspace; linking claims to experiments, analyses, proofs, figures, or literature checks; recording daily progress; or auditing missing support. Keep technical provenance available but outside the main human reading path.
 ---
 
 # Track Research as a Paper Workspace in Notion
@@ -71,20 +71,24 @@ Inside every Paper Area card, place a linked Table of the Papers database filter
 
 Keep a single-select `Big Area` on every Paper and Idea record so the filtered tables remain dynamic. Also keep a `Related Areas` multi-select for finer tags such as JEPA, replay, online adaptation, evaluation, or other workspace-specific topics. Each record gets exactly one best-fit Big Area and may get multiple Related Areas. Keep all source databases on the private data page; the root contains only their linked Gallery views.
 
+Preserve the workspace's established language. In a Korean workspace, use `큰 분야`, `관련 분야`, and `기타`; in an English workspace, use `Big Area`, `Related Areas`, and `Other`. Treat these as equivalent concepts, but never mix both labels in one taxonomy.
+
 ### Extend the broad-area taxonomy
 
-Add a new broad area when the user explicitly names one, or when a new Paper or Idea belongs to a recognized research family at the same granularity as the existing areas and assigning an existing area would be misleading. Do not create a broad area for a single method, benchmark, model family, or experiment theme; keep those in `Related Areas`. Use `Other` only while the evidence is too weak to name a stable family.
+Add a new broad area when the user explicitly names one, or when a new Paper or Idea belongs to a recognized research family at the same granularity as the existing areas and assigning an existing area would be misleading. Do not create a broad area for a single method, benchmark, model family, or experiment theme; keep those in `Related Areas`. Use the workspace's Other-equivalent only while the evidence is too weak to name a stable family.
 
-Before adding an area, normalize capitalization and singular/plural variants, then fetch both area databases and both `Big Area` schemas to prevent aliases or duplicates. When the area is genuinely new:
+Before adding an area, read `references/notion-schema.md` and `references/write-policy.md`, normalize the label, derive one deterministic `area:<kebab-case-slug>` Stable Key, and fetch both area databases and both area-select schemas. Match by Stable Key first and canonical label second. Do not merge distinct acronyms or concepts merely because their names look similar.
 
-1. Add the same option to the Paper and Idea `Big Area` selects, preserving every existing option.
-2. Create one matching card in Paper Areas and one in Idea Areas, even if one side is initially empty.
-3. Use the next display order and write a one-sentence description in ordinary language.
-4. Put a filtered Papers Table inside the Paper Area card and a filtered Ideas Table inside the Idea Area card.
-5. Assign the triggering records to the new area.
-6. Fetch both cards and schemas to verify the names and filters match exactly.
+When the area is genuinely new:
 
-Keep the Paper and Idea area taxonomies synchronized. Never leave an option without its two area cards or an area card without its corresponding select option.
+1. Reconstruct both complete select definitions and add the same option without dropping or renaming existing options.
+2. Upsert one matching card with the same Stable Key in Paper Areas and Idea Areas, even if one side is initially empty.
+3. Keep the catch-all area last, use the next display order, and write a one-sentence description in ordinary language.
+4. Upsert a filtered Papers Table inside the Paper Area card and a filtered Ideas Table inside the Idea Area card.
+5. Assign triggering records only after both options, both cards, and both views exist.
+6. Re-fetch all six objects and verify the labels, keys, filters, visible columns, and sort orders.
+
+Treat the operation as a resumable reconciliation, not an all-or-nothing transaction. After any partial failure, re-fetch state and create or repair only the missing object. Never delete working cards or select options as an automatic rollback. Keep the Paper and Idea area taxonomies synchronized: never leave an option without its two area cards, an area card without its option, or two matching cards with different Stable Keys.
 
 The default portfolio table shows only the human project title, target conference, start date, last update, and priority. Do not add paper relations, research summaries, next actions, blockers, stage, repository paths, or stable keys to the visible portfolio schema. Prefer a fresh minimal database over carrying legacy properties and views into the main surface; move the old database to a recoverable archive after migrating its project pages.
 
@@ -188,6 +192,7 @@ Before completion, read the HQ as a researcher and check:
 - Does every area card open to a Table filtered to the same Big Area?
 - Do underlying Paper and Idea records keep one Big Area and optional finer Related Areas?
 - Are the Paper and Idea Big Area options and area cards synchronized, including newly discovered broad areas?
+- Does every area pair share one Stable Key, and can an interrupted area addition resume without duplicates or destructive rollback?
 - Does each portfolio record open directly into one paper workspace with its own Research Projects and Daily Progress?
 - Is the project-local Daily Progress calendar the first content block in every project home?
 

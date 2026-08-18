@@ -35,8 +35,9 @@ Search by Stable Key before creation. Update one exact match. If several matches
 - Claim: use durable human-readable IDs.
 - Evidence: use source-scoped deterministic IDs.
 - Decision: prefer an ADR ID, otherwise stable date and slug.
+- Broad area: one `area:<kebab-case-slug>` record in Paper Areas and one in Idea Areas; both records must share the same key.
 
-Do not use titles alone as identifiers.
+Do not use titles alone as identifiers. For legacy area cards that have no Stable Key, match a unique normalized canonical title once, backfill the key, and use only the key for later upserts. If normalization finds multiple candidates, stop and report the duplicates.
 
 ## Write authorization
 
@@ -81,6 +82,8 @@ Tool names vary by host. Use the available Notion search, fetch, create, update,
 3. Verify existing state.
 4. Report missing relations, properties, views, or records.
 5. Resume from verified state; do not replay the full bootstrap blindly.
+
+For a broad-area update, reconcile the two select options, two keyed area cards, and two filtered views independently. Assign triggering records last. Preserve successful objects and repair only missing or incorrect pieces; never use destructive rollback for a partially completed taxonomy update.
 
 If Notion tools are unavailable, return a dry-run payload with intended target, records, stable keys, relations, and evidence grades.
 

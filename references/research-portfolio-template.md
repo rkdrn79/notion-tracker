@@ -32,9 +32,9 @@ Do not add anything else to the main page by default. Keep instructions, status 
 
 Keep Papers and Ideas as separate asset databases. Also create separate Paper Areas and Idea Areas databases whose records are the cards shown on the Research Space. Each area card opens to a linked Table filtered from its corresponding asset database.
 
-Use genuinely broad areas by default: `World Models`, `MLLM`, `Generative Modeling`, `Continual Learning`, `Robotics`, `Representation Learning`, and `Other`. Assign exactly one best-fit `Big Area` to each Paper or Idea. Use `Related Areas` for narrower concepts such as JEPA, replay, online adaptation, or evaluation.
+Use genuinely broad areas by default: `World Models`, `MLLM`, `Generative Modeling`, `Continual Learning`, `Robotics`, `Representation Learning`, and the workspace's catch-all value (`기타` in Korean, `Other` in English). Assign exactly one best-fit area to each Paper or Idea. Use the finer related-areas property for narrower concepts such as JEPA, replay, online adaptation, or evaluation.
 
-The list is extensible rather than closed. When a new field-level family appears, add the same canonical value to both asset databases, create matching cards in both area Galleries, and place a correctly filtered Table in each card. Preserve the existing order and append the new family before `Other` when practical. Avoid near-duplicates and do not promote narrow method tags into broad areas.
+The list is extensible rather than closed. When a new field-level family appears, add the same canonical value to both asset databases, upsert matching cards with one shared `area:<kebab-case-slug>` Stable Key in both area Galleries, and place a correctly filtered Table in each card. Preserve the existing order and keep the catch-all last. Avoid near-duplicates and do not promote narrow method tags into broad areas.
 
 ## Human portfolio fields
 

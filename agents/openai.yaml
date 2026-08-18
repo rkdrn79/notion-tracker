@@ -1,4 +1,4 @@
 interface:
-  display_name: "Notion Research Portfolio"
-  short_description: "Manage multiple paper workspaces and their research"
-  default_prompt: "Use $notion-track-research to manage my Notion research portfolio, keep each project as a paper workspace, and track its supporting research and daily progress."
+  display_name: "Notion Paper-First Research Space"
+  short_description: "Track papers, ideas, areas, and research evidence"
+  default_prompt: "Use $notion-track-research to organize my Notion Research Space, keep papers and ideas in extensible area galleries, and maintain paper-ready project workspaces with linked evidence and daily progress."

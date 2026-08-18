@@ -10,22 +10,36 @@ Both Papers and Ideas require:
 
 | Property | Type | Meaning |
 |---|---|---|
-| 큰 분야 / Big Area | Select | Exactly one broad family: World Models, MLLM, Generative Modeling, Continual Learning, Robotics, Representation Learning, or Other |
+| 큰 분야 / Big Area | Select | Exactly one broad family: World Models, MLLM, Generative Modeling, Continual Learning, Robotics, Representation Learning, or the workspace's catch-all value |
 | 관련 분야 / Related Areas | Multi-select | Zero or more finer workspace-specific topics such as JEPA, replay, online adaptation, or evaluation |
 
-Create separate Paper Areas and Idea Areas databases with one page per broad area. Each area database needs only a human title, short description, and numeric display order by default. Inside each Paper Area page, create a linked Table of Papers filtered where `Big Area` equals the page's area. Do the same with Ideas inside each Idea Area page. The Research Space Galleries show these area pages; they do not show individual Paper or Idea records directly.
+Use `기타` as the catch-all in a Korean workspace and `Other` in an English workspace. Preserve an existing deliberate equivalent and never create both values.
+
+Create separate Paper Areas and Idea Areas databases with one page per broad area:
+
+| Property | Type | Meaning |
+|---|---|---|
+| 분야 / Area | Title | Human-facing canonical label |
+| 분야 키 / Area Key | Rich text, hidden | Shared Stable Key in `area:<kebab-case-slug>` form |
+| 설명 / Description | Rich text | One plain-language sentence |
+| 순서 / Order | Number | Gallery display order; keep the catch-all last |
+
+Inside each Paper Area page, create a linked Table of Papers filtered where the area select equals the page's label. Do the same with Ideas inside each Idea Area page. The Research Space Galleries show these area pages; they do not show individual Paper or Idea records directly. When repairing a legacy area database without Area Key, add the hidden property and backfill every card before creating new areas.
 
 ## Adding a broad area
 
-Treat the Paper and Idea taxonomies as one synchronized vocabulary. Before adding an option, fetch both asset schemas and query both area databases. Reuse an existing canonical label when the candidate differs only by case, spacing, abbreviation, or singular/plural form.
+Treat the Paper and Idea taxonomies as one synchronized vocabulary. Before adding an option, fetch both asset schemas and query both area databases. Normalize Unicode, trim and collapse whitespace, compare labels case-insensitively, and derive one Stable Key. Build the key by lowercasing where applicable, replacing spaces and underscores with one hyphen, collapsing repeated hyphens, preserving non-Latin characters without translation or transliteration, and prefixing `area:`. Reuse an existing canonical label when the candidate is a safe capitalization, spacing, or singular/plural alias. Do not expand or merge acronyms by guesswork.
 
 For a genuinely new field-level family:
 
-1. Alter both `Big Area` selects to include the new value while retaining every existing option and color.
-2. Add matching Paper Area and Idea Area records with the next numeric order.
-3. Create a Table inside each new card using an exact `Big Area = new value` filter against the corresponding asset database.
-4. Match the visible columns and sort order used by existing area cards.
-5. Update the triggering Paper or Idea records, then verify both schemas, both cards, and both filtered views.
+1. Snapshot both complete select definitions, including every option and color.
+2. Alter each select with the full preserved definition plus the new value; verify the first before changing the second.
+3. Upsert matching Paper Area and Idea Area records by Stable Key. If the catch-all currently has the last order, insert the new area before it and move the catch-all to the new maximum.
+4. Upsert one Table inside each card using an exact area-select filter against the corresponding asset database. Match the visible columns and sort order used by existing cards.
+5. Update the triggering Paper or Idea records only after both select options, both cards, and both views are verified.
+6. Verify this invariant: one label in both selects, one card in each area database with the same Stable Key, and one correctly filtered view in each card.
+
+If interrupted, re-fetch those six objects and resume from the first missing or incorrect object. Do not replay successful creates, duplicate cards, discard existing select options, or delete working objects as rollback.
 
 Do not use this workflow for narrow topics; add those only to `Related Areas`.
 
