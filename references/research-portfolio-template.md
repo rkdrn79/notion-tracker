@@ -26,7 +26,7 @@ The database record is the project home. Do not insert a second generic HQ page 
 
 Do not add anything else to the main page by default. Keep instructions, papers, ideas, status dashboards, and archived structures elsewhere.
 
-Place active cross-project Papers and Ideas databases on a separate top-level shared-assets page. They are working research assets, not migration debris.
+Place active cross-project Papers and Ideas databases on a separate top-level shared-assets page. Show both as Gallery views and expose a shared human `Related Areas` multi-select on every card. Use a compact, workspace-relevant vocabulary and tag existing records from their titles and summaries. They are working research assets, not migration debris.
 
 ## Human portfolio fields
 

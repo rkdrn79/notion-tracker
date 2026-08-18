@@ -65,7 +65,7 @@ Prefer research summaries and manifests to raw logs. Do not crawl large artifact
 
 Keep the portfolio page visually empty except for one linked Notion database in a Gallery view, where one research line is one card. Do not add an explanatory callout, field guide, status dashboard, board, table, linked summary views, “what to look at” section, papers table, or ideas table to the main page unless the user explicitly asks.
 
-Keep active cross-project Papers and Ideas databases on a separate top-level shared-assets page. Do not archive or delete them merely to declutter the portfolio main page.
+Keep active cross-project Papers and Ideas databases on a separate top-level shared-assets page. Show each as a Gallery, add a human `Related Areas` multi-select field, and display those area tags on cards. Keep the source databases on the private data page. Do not archive or delete them merely to declutter the portfolio main page.
 
 The default portfolio table shows only the human project title, target conference, start date, last update, and priority. Do not add paper relations, research summaries, next actions, blockers, stage, repository paths, or stable keys to the visible portfolio schema. Prefer a fresh minimal database over carrying legacy properties and views into the main surface; move the old database to a recoverable archive after migrating its project pages.
 
