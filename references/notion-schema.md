@@ -2,6 +2,19 @@
 
 The paper page is primary. Databases exist to resolve and track missing paper support.
 
+## Research Space shared libraries
+
+The Research Space root contains three separate linked Gallery views: Research Projects, Papers, and Ideas. Keep their source databases on a private data page.
+
+Both Papers and Ideas require:
+
+| Property | Type | Meaning |
+|---|---|---|
+| 큰 분야 / Big Area | Select | Exactly one broad family: World Models, MLLM, Generative Modeling, Continual Learning, Robotics, Representation Learning, or Other |
+| 관련 분야 / Related Areas | Multi-select | Zero or more finer workspace-specific topics such as JEPA, replay, online adaptation, or evaluation |
+
+Group each linked Paper and Idea Gallery by Big Area. Big Areas are select values, not rows in a separate database and not intermediate pages.
+
 ## Required structure
 
 1. One paper HQ following real paper sections.

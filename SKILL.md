@@ -9,7 +9,7 @@ Make the Notion page sufficient for a researcher to understand and write the pap
 
 ## Core contract
 
-- Treat the workspace root as the **research portfolio** and each portfolio record as one independent **paper workspace**.
+- Treat the workspace root as one **Research Space** with three separate linked Galleries: Research Projects, Papers, and Ideas. Each project card is one independent **paper workspace**.
 - Make the portfolio record itself the research home. Opening it must lead directly to the paper, not through a redundant intermediate HQ.
 - Treat each project home as the canonical paper workspace: it follows the final paper's section order and contains the full argument, section intent, claims, current evidence, and missing support.
 - Write enough connected prose and structured detail that the manuscript can be drafted from Notion alone.
@@ -61,11 +61,13 @@ Do not expose local absolute paths, server directory trees, shell commands, hash
 
 Prefer research summaries and manifests to raw logs. Do not crawl large artifact trees without a concrete need.
 
-## Multi-project portfolio
+## Unified multi-project research space
 
-Keep the portfolio page visually empty except for one linked Notion database in a Gallery view, where one research line is one card. Do not add an explanatory callout, field guide, status dashboard, board, table, linked summary views, “what to look at” section, papers table, or ideas table to the main page unless the user explicitly asks.
+Keep the root visually simple and useful: under the minimal headings `Research Projects`, `Papers`, and `Ideas`, show exactly three separate linked Notion databases in Gallery views. Do not add an explanatory callout, field guide, status dashboard, board, table, linked summary views, or “what to look at” section unless the user explicitly asks.
 
-Keep active cross-project Papers and Ideas databases on a separate top-level shared-assets page. Show each as a Gallery, add a human `Related Areas` multi-select field, and display those area tags on cards. Keep the source databases on the private data page. Do not archive or delete them merely to declutter the portfolio main page.
+Keep Papers and Ideas as distinct Galleries. Group both Galleries by one single-select `Big Area` property whose values are broad research families, not narrow method tags. Use this default vocabulary unless the workspace already has a deliberate equivalent: `World Models`, `MLLM`, `Generative Modeling`, `Continual Learning`, `Robotics`, `Representation Learning`, `Other`. Do not create database records, gallery cards, or intermediate pages for these broad areas.
+
+Also keep a `Related Areas` multi-select for finer tags such as JEPA, replay, online adaptation, evaluation, or other workspace-specific topics. Show both `Big Area` and `Related Areas` on Paper and Idea cards. Each record gets exactly one best-fit Big Area and may get multiple Related Areas. Keep all three source databases on the private data page; the root contains only their linked Gallery views.
 
 The default portfolio table shows only the human project title, target conference, start date, last update, and priority. Do not add paper relations, research summaries, next actions, blockers, stage, repository paths, or stable keys to the visible portfolio schema. Prefer a fresh minimal database over carrying legacy properties and views into the main surface; move the old database to a recoverable archive after migrating its project pages.
 
@@ -163,7 +165,10 @@ Before completion, read the HQ as a researcher and check:
 - Are jargon, IDs, code paths, server directories, and operational metadata absent from the main reading path?
 - Are negative results, alternatives, and limitations visible?
 - Do default views use human-readable columns and labels?
-- Does the portfolio main page contain only one Gallery view whose cards show project, target conference, start date, last update, and priority?
+- Does the Research Space root contain exactly three separate Gallery views in this order: Research Projects, Papers, and Ideas?
+- Do project cards show project, target conference, start date, last update, and priority?
+- Are Papers and Ideas kept separate, grouped by one broad Big Area, and still tagged with finer Related Areas?
+- Are broad areas values rather than database records or intermediate pages?
 - Does each portfolio record open directly into one paper workspace with its own Research Projects and Daily Progress?
 - Is the project-local Daily Progress calendar the first content block in every project home?
 
