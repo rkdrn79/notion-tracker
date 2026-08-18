@@ -22,9 +22,11 @@ The database record is the project home. Do not insert a second generic HQ page 
 
 ## Portfolio page reading order
 
-1. The research portfolio database in an inline spreadsheet-like table view.
+1. A linked Gallery view of the research portfolio database, with one research line per card.
 
 Do not add anything else to the main page by default. Keep instructions, papers, ideas, status dashboards, and archived structures elsewhere.
+
+Place active cross-project Papers and Ideas databases on a separate top-level shared-assets page. They are working research assets, not migration debris.
 
 ## Human portfolio fields
 
@@ -40,7 +42,7 @@ Use the workspace's established language and property names. Do not carry old re
 
 ## Required view
 
-- **Research portfolio:** one table view with the five human fields above. Disable cell wrapping for a spreadsheet-like surface and freeze the title column when supported.
+- **Research portfolio:** one Gallery view whose cards show the five human fields above. Keep the source database on a separate private data page so the main page contains only the Gallery.
 
 ## Bootstrap a new project home
 
@@ -60,4 +62,4 @@ Use the workspace's established language and property names. Do not carry old re
 3. Move the project record and child databases into the new hierarchy.
 4. Copy the paper-form content into the project record and put its Daily Progress calendar first.
 5. Verify paper sections, links, relations, visible fields, and database ancestors.
-6. Move the old portfolio database and redundant intermediate HQ to a recoverable private archive. Permanently delete only after explicit confirmation and only when the connector supports it safely.
+6. Move the old portfolio database and redundant intermediate HQ to a recoverable private archive. Move active Papers and Ideas databases to a separate top-level shared-assets page instead of archiving them. Permanently delete only after explicit confirmation and only when the connector supports it safely.

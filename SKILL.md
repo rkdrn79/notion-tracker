@@ -63,7 +63,9 @@ Prefer research summaries and manifests to raw logs. Do not crawl large artifact
 
 ## Multi-project portfolio
 
-Keep the portfolio page visually empty except for one inline Notion database in a spreadsheet-like table view. Do not add an explanatory callout, field guide, status dashboard, board, linked summary views, “what to look at” section, papers table, or ideas table to the main page unless the user explicitly asks.
+Keep the portfolio page visually empty except for one linked Notion database in a Gallery view, where one research line is one card. Do not add an explanatory callout, field guide, status dashboard, board, table, linked summary views, “what to look at” section, papers table, or ideas table to the main page unless the user explicitly asks.
+
+Keep active cross-project Papers and Ideas databases on a separate top-level shared-assets page. Do not archive or delete them merely to declutter the portfolio main page.
 
 The default portfolio table shows only the human project title, target conference, start date, last update, and priority. Do not add paper relations, research summaries, next actions, blockers, stage, repository paths, or stable keys to the visible portfolio schema. Prefer a fresh minimal database over carrying legacy properties and views into the main surface; move the old database to a recoverable archive after migrating its project pages.
 
@@ -161,7 +163,7 @@ Before completion, read the HQ as a researcher and check:
 - Are jargon, IDs, code paths, server directories, and operational metadata absent from the main reading path?
 - Are negative results, alternatives, and limitations visible?
 - Do default views use human-readable columns and labels?
-- Does the portfolio main page contain only one spreadsheet-like table with project, target conference, start date, last update, and priority?
+- Does the portfolio main page contain only one Gallery view whose cards show project, target conference, start date, last update, and priority?
 - Does each portfolio record open directly into one paper workspace with its own Research Projects and Daily Progress?
 - Is the project-local Daily Progress calendar the first content block in every project home?
 
